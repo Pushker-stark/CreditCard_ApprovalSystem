@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'CredAPSystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'CreditCard',
+        'USER': 'pushker',
+        'PASSWORD': 'pushker',
+        'HOST': 'localhost',  # Set to the IP or hostname of your PostgreSQL server
+        'PORT': '5432',       # Default PostgreSQL port
     }
 }
 
