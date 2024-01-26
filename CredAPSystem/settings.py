@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'CredAPSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CreditCard',
-        'USER': 'pushker',
-        'PASSWORD': 'pushker',
-        'HOST': 'localhost',  # Set to the IP or hostname of your PostgreSQL server
-        'PORT': '5432',       # Default PostgreSQL port
+        'NAME': os.environ.get("SQL_NAME"),
+        'USER': os.environ.get("SQL_USER"),
+        'PASSWORD': os.environ.get("SQL_PASSWORD"),
+        'HOST': os.environ.get("HOST"),  # Set to the IP or hostname of your PostgreSQL server
+        'PORT': os.environ.get("PORT"),  # Default PostgreSQL port
     }
 }
 
